@@ -1,0 +1,81 @@
+﻿@using AdventureEntity.Controllers
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+  <h1>Welcome!</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default" style="background-color: #44a6d6;width: 400px; height: 300px;box-shadow: 8px 8px 5px #888888;">
+      <div class="panel-heading"><h3>Individual Customer Management</h3></div>
+      <div class="panel-body">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+          @Html.ActionLink("Online Customers", "Index", "IndividualCustomer", null, new { @class = "btn btn-default mybtn" })
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-6">
+      <div class="panel panel-default" style="background-color: #f6d95d;width: 400px; height: 300px;box-shadow: 8px 8px 5px #888888;">
+        <div class="panel-heading"><h3>Store Contacts</h3></div>
+        <div class="panel-body">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div>
+            @Html.ActionLink("Coming Soon!", "Index", null, null, new { @class = "btn btn-default mybtn" })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default" style="background-color: #d490e1;width: 400px; height: 300px;box-shadow: 8px 8px 5px #888888;">
+      <div class="panel-heading"><h3>Sales Territory Reporting</h3></div>
+      <div class="panel-body">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+          @Html.ActionLink("Sales Report", "Report", null, null, new { @class = "btn btn-default mybtn" })
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-6">
+      <div class="panel panel-default" style="background-color: #f07759;width: 400px; height: 300px;box-shadow: 8px 8px 5px #888888;">
+        <div class="panel-heading"><h3>Other Stuff!!!</h3></div>
+        <div class="panel-body">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div>
+            @Html.ActionLink("YAY!!!", "Index", null, null, new { @class = "btn btn-default mybtn" })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

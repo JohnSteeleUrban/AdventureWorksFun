@@ -1,0 +1,60 @@
+﻿@model PagedList.IPagedList<AdventureEntity.Models.Customer>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Online Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Online Customers</h2>
+
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+<div class="container" >
+@using (Html.BeginForm("Index", "IndividualCustomer", FormMethod.Get))
+{
+  <p>
+    Search Name: @Html.TextBox("SearchData", ViewBag.FilterValue as string)
+    <input type="submit" value="Find" />
+  </p>
+}
+<table class="table table-striped" style="width: 900px;">
+  <tr>
+    <th>
+          @Html.ActionLink("Last Name", "Index", new { sortingOrder = ViewBag.SortingLast, filterValue = ViewBag.FilterValue })
+    </th>
+    <th>
+      @Html.ActionLink("First Name", "Index", new { sortingOrder = ViewBag.SortingFirst, filterValue = ViewBag.FilterValue })
+    </th>
+    <th>
+      @Html.DisplayName("Account Number")
+    </th>
+  </tr>
+
+  @foreach (var item in Model)
+  {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Person.LastName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Person.FirstName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.AccountNumber)
+        </td>
+        <td>
+          @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+          @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+          @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }) |
+          @Html.ActionLink("HistoryReport", "HistoryReport", new { id = item.CustomerID })
+        </td>
+      </tr>
+  }
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, pageNum =>Url.Action("Index",
+  new { pageNum, sortingOrder= ViewBag.CurrentSortOrder, filterValue = ViewBag.FilterValue })) 
+  </div>

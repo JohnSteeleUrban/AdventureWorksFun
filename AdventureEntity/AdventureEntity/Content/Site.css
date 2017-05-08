@@ -1,0 +1,51 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #F3F7F9;
+    background-image: url("/Images/bike.png");
+    -ms-background-repeat:no-repeat;
+    background-repeat:no-repeat;
+    -ms-background-size: 500px;
+    background-size: 500px;
+    background-position-x: 50%;
+    background-position-y: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+a.mybtn {
+    box-shadow: 2px 2px 5px #888888;
+}
+.panel-body {
+    display: flex;
+    -o-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center; /* Horizontally centers the content */
+    -ms-align-items: center;
+    -o-align-items: center;
+    -webkit-align-items: center;
+    align-items: center; /* Vertically centers the content */
+}
+
